@@ -67,7 +67,7 @@
             <!--i.fa.fa-caret-down-->
             <md-icon>arrow_drop_down</md-icon>
           </md-button>
-          <input type="number" ng-model="clock._minutes"/>
+          <input type="number" min="0" max="59" ng-model="clock._minutes"/>
           <md-button type="button" ng-click="clock._incMinutes(1)" aria-label="{{:: translations.incrementMinutes}}" class="minutes up">
             <!--i.fa.fa-caret-up-->
             <md-icon>arrow_drop_up</md-icon>
