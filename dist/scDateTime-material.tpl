@@ -96,6 +96,7 @@
   </div>
   <div class="buttons">
     <md-button type="button" ng-click="setNow()" aria-label="{{:: translations.now}}">{{:: translations.now}}</md-button>
+    <md-button type="button" ng-click="clear()" aria-label="{{:: translations.clear}}">{{:: translations.clear}}</md-button>
     <md-button type="button" ng-click="cancel()" ng-if="!autosave" aria-label="{{:: translations.cancel}}">{{:: translations.cancel}}</md-button>
     <md-button type="button" ng-click="save()" ng-if="!autosave" aria-label="{{:: translations.save}}">{{:: translations.save}}</md-button>
   </div>

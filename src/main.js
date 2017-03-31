@@ -24,6 +24,7 @@ angular.module(MODULE_NAME, [])
   decrementMinutes: 'Decrement Minutes',
   switchAmPm: 'Switch AM/PM',
   now: 'Now',
+  clear: 'Clear',
   cancel: 'Cancel',
   save: 'Save',
   weekdays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -105,6 +106,11 @@ angular.module(MODULE_NAME, [])
         scope.save = function () {
           ngModel.$setViewValue(new Date(scope.date));
           return saveFn(scope.$parent, { $value: new Date(scope.date) });
+        };
+
+        scope.clear = function () {
+          ngModel.$setViewValue(null);
+          return saveFn(scope.$parent, { $value: null });
         };
 
         return scope.cancel = function () {
