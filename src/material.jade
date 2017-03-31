@@ -11,12 +11,14 @@
 			.date-control
 				.title
 					md-button(type="button" ng-click="calendar._incMonth(-1)" aria-label="{{:: translations.previousMonth}}" style="float: left;" ng-class="{'visuallyhidden': calendar.isPrevMonthButtonHidden()}")
-						i.fa.fa-caret-left
+						//i.fa.fa-caret-left
+						md-icon keyboard_arrow_left
 					span.month-part {{date | date:'MMMM'}}
 						select(ng-model="calendar._month" ng-change="calendar.monthChange()" ng-options="calendar._allMonths.indexOf(month) as month for month in calendar._months")
 					input.year-part(ng-model="calendar._year" ng-change="calendar.yearChange()" type="number" min="{{restrictions.mindate ? restrictions.mindate.getFullYear() : 0}}" max="{{restrictions.maxdate ? restrictions.maxdate.getFullYear() : NaN}}")
 					md-button(type="button" ng-click="calendar._incMonth(1)" aria-label="{{:: translations.nextMonth}}" style="float: right;" ng-class="{'visuallyhidden': calendar.isNextMonthButtonHidden()}")
-						i.fa.fa-caret-right
+						//i.fa.fa-caret-right
+						md-icon keyboard_arrow_right
 				.headers
 					.day-cell(ng-repeat="day in _weekdays track by $index") {{day}}
 				.days
@@ -26,8 +28,10 @@
 						else
 							md-button.day-cell(type="button" ng-class= "calendar.class("+day+")" ng-show="calendar.isVisible("+day+")" ng-disabled="calendar.isDisabled("+day+")" ng-click="calendar.select("+day+")" aria-label=day)= day
 			md-button.switch-control(type="button" ng-click="modeSwitch()" aria-label="{{modeSwitchText()}}")
-				i.fa.fa-clock-o
-				i.fa.fa-calendar
+				//i.fa.fa-clock-o
+				md-icon access_time
+				//i.fa.fa-calendar
+				md-icon today
 				span.visuallyhidden {{modeSwitchText()}}
 			.time-control
 				.time-inputs

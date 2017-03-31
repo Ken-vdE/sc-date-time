@@ -13,10 +13,16 @@
     <div class="slider"> 
       <div class="date-control">
         <div class="title">
-          <md-button type="button" ng-click="calendar._incMonth(-1)" aria-label="{{:: translations.previousMonth}}" style="float: left;" ng-class="{'visuallyhidden': calendar.isPrevMonthButtonHidden()}"><i class="fa fa-caret-left"></i></md-button><span class="month-part">{{date | date:'MMMM'}}
+          <md-button type="button" ng-click="calendar._incMonth(-1)" aria-label="{{:: translations.previousMonth}}" style="float: left;" ng-class="{'visuallyhidden': calendar.isPrevMonthButtonHidden()}">
+            <!--i.fa.fa-caret-left-->
+            <md-icon>keyboard_arrow_left</md-icon>
+          </md-button><span class="month-part">{{date | date:'MMMM'}}
             <select ng-model="calendar._month" ng-change="calendar.monthChange()" ng-options="calendar._allMonths.indexOf(month) as month for month in calendar._months"></select></span>
           <input ng-model="calendar._year" ng-change="calendar.yearChange()" type="number" min="{{restrictions.mindate ? restrictions.mindate.getFullYear() : 0}}" max="{{restrictions.maxdate ? restrictions.maxdate.getFullYear() : NaN}}" class="year-part"/>
-          <md-button type="button" ng-click="calendar._incMonth(1)" aria-label="{{:: translations.nextMonth}}" style="float: right;" ng-class="{'visuallyhidden': calendar.isNextMonthButtonHidden()}"><i class="fa fa-caret-right"></i></md-button>
+          <md-button type="button" ng-click="calendar._incMonth(1)" aria-label="{{:: translations.nextMonth}}" style="float: right;" ng-class="{'visuallyhidden': calendar.isNextMonthButtonHidden()}">
+            <!--i.fa.fa-caret-right-->
+            <md-icon>keyboard_arrow_right</md-icon>
+          </md-button>
         </div>
         <div class="headers">
           <div ng-repeat="day in _weekdays track by $index" class="day-cell">{{day}}</div>
@@ -55,7 +61,12 @@
           <md-button type="button" ng-class="calendar.class(31)" ng-show="calendar.isVisible(31)" ng-disabled="calendar.isDisabled(31)" ng-click="calendar.select(31)" aria-label="31" class="day-cell">31</md-button>
         </div>
       </div>
-      <md-button type="button" ng-click="modeSwitch()" aria-label="{{modeSwitchText()}}" class="switch-control"><i class="fa fa-clock-o"></i><i class="fa fa-calendar"></i><span class="visuallyhidden">{{modeSwitchText()}}</span></md-button>
+      <md-button type="button" ng-click="modeSwitch()" aria-label="{{modeSwitchText()}}" class="switch-control">
+        <!--i.fa.fa-clock-o-->
+        <md-icon>access_time</md-icon>
+        <!--i.fa.fa-calendar-->
+        <md-icon>today</md-icon><span class="visuallyhidden">{{modeSwitchText()}}</span>
+      </md-button>
       <div class="time-control">
         <div class="time-inputs">
           <input type="number" min="{{_hours24 ? 0 : 1}}" max="{{_hours24 ? 23 : 12}}" ng-model="clock._hours"/>
