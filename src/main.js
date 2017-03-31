@@ -137,7 +137,7 @@ angular.module(MODULE_NAME, [])
           scope.date = newVal ? new Date(newVal) : new Date();
           scope.calendar._year = scope.date.getFullYear();
           scope.calendar._month = scope.date.getMonth();
-          scope.clock._minutes = scope.addZero(scope.date.getMinutes());
+          scope.clock._minutes = /*scope.addZero(*/scope.date.getMinutes()/*)*/;
           scope.clock._hours = scope._hours24 ? scope.date.getHours() : scope.date.getHours() % 12;
           if (!scope._hours24 && (scope.clock._hours === 0)) { scope.clock._hours = 12; }
 
@@ -299,7 +299,7 @@ angular.module(MODULE_NAME, [])
           },
         };
         scope.clock = {
-          _minutes: '00',
+          _minutes: 0/*'00'*/,
           _hours: 0,
           _incHours(inc) {
             this._hours = scope._hours24
@@ -309,7 +309,7 @@ angular.module(MODULE_NAME, [])
           },
 
           _incMinutes(inc) {
-            return this._minutes = scope.addZero(Math.max(0, Math.min(59, parseInt(this._minutes) + inc))).toString();
+            return this._minutes = /*scope.addZero(*/Math.max(0, Math.min(59, parseInt(this._minutes) + inc))/*).toString()*/;
           },
 
           setAM(b) {

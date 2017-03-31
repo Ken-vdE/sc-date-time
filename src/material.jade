@@ -33,14 +33,18 @@
 				.time-inputs
 					input(type="number" min="{{_hours24 ? 0 : 1}}" max="{{_hours24 ? 23 : 12}}" ng-model="clock._hours")
 					md-button.hours.up(type="button" ng-click="clock._incHours(1)" aria-label="{{:: translations.incrementHours}}")
-						i.fa.fa-caret-up
+						//i.fa.fa-caret-up
+						md-icon arrow_drop_up
 					md-button.hours.down(type="button" ng-click="clock._incHours(-1)" aria-label="{{:: translations.decrementHours}}")
-						i.fa.fa-caret-down
+						//i.fa.fa-caret-down
+						md-icon arrow_drop_down
 					input(type="number" ng-model="clock._minutes")
 					md-button.minutes.up(type="button" ng-click="clock._incMinutes(1)" aria-label="{{:: translations.incrementMinutes}}")
-						i.fa.fa-caret-up
+						//i.fa.fa-caret-up
+						md-icon arrow_drop_up
 					md-button.minutes.down(type="button" ng-click="clock._incMinutes(-1)" aria-label="{{:: translations.decrementMinutes}}")
-						i.fa.fa-caret-down
+						//i.fa.fa-caret-down
+						md-icon arrow_drop_down
 				.buttons(ng-if="!_hours24")
 					md-button(type="button" ng-click="clock.setAM()" aria-label="{{:: translations.switchAmPm}}") {{date | date:'a'}}
 	.buttons

@@ -59,11 +59,23 @@
       <div class="time-control">
         <div class="time-inputs">
           <input type="number" min="{{_hours24 ? 0 : 1}}" max="{{_hours24 ? 23 : 12}}" ng-model="clock._hours"/>
-          <md-button type="button" ng-click="clock._incHours(1)" aria-label="{{:: translations.incrementHours}}" class="hours up"><i class="fa fa-caret-up"></i></md-button>
-          <md-button type="button" ng-click="clock._incHours(-1)" aria-label="{{:: translations.decrementHours}}" class="hours down"><i class="fa fa-caret-down"></i></md-button>
+          <md-button type="button" ng-click="clock._incHours(1)" aria-label="{{:: translations.incrementHours}}" class="hours up">
+            <!--i.fa.fa-caret-up-->
+            <md-icon>arrow_drop_up</md-icon>
+          </md-button>
+          <md-button type="button" ng-click="clock._incHours(-1)" aria-label="{{:: translations.decrementHours}}" class="hours down">
+            <!--i.fa.fa-caret-down-->
+            <md-icon>arrow_drop_down</md-icon>
+          </md-button>
           <input type="number" ng-model="clock._minutes"/>
-          <md-button type="button" ng-click="clock._incMinutes(1)" aria-label="{{:: translations.incrementMinutes}}" class="minutes up"><i class="fa fa-caret-up"></i></md-button>
-          <md-button type="button" ng-click="clock._incMinutes(-1)" aria-label="{{:: translations.decrementMinutes}}" class="minutes down"><i class="fa fa-caret-down"></i></md-button>
+          <md-button type="button" ng-click="clock._incMinutes(1)" aria-label="{{:: translations.incrementMinutes}}" class="minutes up">
+            <!--i.fa.fa-caret-up-->
+            <md-icon>arrow_drop_up</md-icon>
+          </md-button>
+          <md-button type="button" ng-click="clock._incMinutes(-1)" aria-label="{{:: translations.decrementMinutes}}" class="minutes down">
+            <!--i.fa.fa-caret-down-->
+            <md-icon>arrow_drop_down</md-icon>
+          </md-button>
         </div>
         <div ng-if="!_hours24" class="buttons">
           <md-button type="button" ng-click="clock.setAM()" aria-label="{{:: translations.switchAmPm}}">{{date | date:'a'}}</md-button>
